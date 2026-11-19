@@ -10,6 +10,7 @@
   --card-h: 263px;
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
+[hidden] { display: none !important; }
 body {
   background: radial-gradient(1200px 800px at 50% -10%, var(--bg2), var(--bg));
   color: var(--ink);
