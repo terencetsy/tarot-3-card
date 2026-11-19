@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Three-Card Tarot — Past · Present · Future</title>
+<meta name="description" content="A three-card tarot reading with the classic Rider-Waite deck. Draw Past, Present and Future.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <h1>Three-Card Tarot</h1>
+      <p class="sub">Past &middot; Present &middot; Future &mdash; classic Rider-Waite deck</p>
+    </header>
+
+    <section id="intro" class="intro">
+      <p>Take a breath. Think of a question, or just see what the cards say.</p>
+      <p>Tap the deck to shuffle and draw three cards.</p>
+    </section>
+
+    <section class="deck-row">
+      <button id="deckBtn" class="deck-btn" aria-label="Shuffle and draw three cards">
+        <img src="cards/CardBacks.jpg" alt="Tarot deck" id="deckImg">
+        <span class="deck-label">Tap to draw</span>
+      </button>
+    </section>
+
+    <section id="spread" class="spread" hidden>
+      <div class="slot" data-pos="0">
+        <h2>Past</h2>
+        <div class="card" tabindex="0" role="button" aria-label="Past card"></div>
+        <p class="card-name"></p>
+        <p class="card-ori"></p>
+        <p class="card-keys"></p>
+      </div>
+      <div class="slot" data-pos="1">
+        <h2>Present</h2>
+        <div class="card" tabindex="0" role="button" aria-label="Present card"></div>
+        <p class="card-name"></p>
+        <p class="card-ori"></p>
+        <p class="card-keys"></p>
+      </div>
+      <div class="slot" data-pos="2">
+        <h2>Future</h2>
+        <div class="card" tabindex="0" role="button" aria-label="Future card"></div>
+        <p class="card-name"></p>
+        <p class="card-ori"></p>
+        <p class="card-keys"></p>
+      </div>
+    </section>
+
+    <section id="reading" class="reading" hidden>
+      <h2>Your reading</h2>
+      <div id="readingText"></div>
+      <div class="actions">
+        <button id="againBtn" class="btn">Shuffle &amp; draw again</button>
+        <button id="shareBtn" class="btn ghost">Copy reading as text</button>
+      </div>
+      <p id="copied" class="copied" hidden>Copied — paste it anywhere.</p>
+    </section>
+
+    <footer>
+      <p>For reflection and fun — not a substitute for real advice. Artwork: the Rider-Waite deck (1909, public domain).</p>
+    </footer>
+  </main>
+
+  <div id="modal" class="modal" hidden>
+    <div class="modal-box">
+      <button id="modalClose" class="modal-close" aria-label="Close">&times;</button>
+      <img id="modalImg" src="" alt="">
+      <h3 id="modalName"></h3>
+      <p id="modalOri" class="card-ori"></p>
+      <p id="modalKeys" class="card-keys"></p>
+      <p id="modalMeaning" class="modal-meaning"></p>
+    </div>
+  </div>
+
+  <script src="cards.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
